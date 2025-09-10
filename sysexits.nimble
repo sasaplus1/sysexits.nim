@@ -11,16 +11,11 @@ srcDir        = "src"
 
 requires "nim >= 1.0.0"
 
-# Dev dependencies
-
-feature "dev":
-  requires "testament"
-
 # Tasks
 
-task test, "Run tests":
-  exec "testament pattern tests/*.nim"
+task clean, "Remove generated files":
   rmFile "tests/sysexits"
 
-task clean, "Remove generated files":
+task test, "Run tests":
+  exec "nim c -r tests/sysexits.nim"
   rmFile "tests/sysexits"

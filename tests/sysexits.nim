@@ -1,65 +1,66 @@
-discard """
-  action: "run"
-  exitcode: 0
-  output: "All sysexits constants are correctly exported"
-"""
-
+import std/unittest
 import ../src/sysexits
 
-# 各定数が正しい値を持つことを確認
-assert ExOk == 0, "ExOk should be 0"
-assert ExBase == 64, "ExBase should be 64"
+suite "sysexits constants":
 
-# command line usage error
-assert ExUsage == 64, "ExUsage should be 64"
+  test "ExOk constant":
+    check ExOk == 0
 
-# data format error
-assert ExDataerr == 65, "ExDataerr should be 65"
+  test "ExBase constant":
+    check ExBase == 64
 
-# cannot open input
-assert ExNoinput == 66, "ExNoinput should be 66"
+  test "ExUsage constant":
+    check ExUsage == 64
 
-# addressee unknown
-assert ExNouser == 67, "ExNouser should be 67"
+  test "ExDataerr constant":
+    check ExDataerr == 65
 
-# host name unknown
-assert ExNohost == 68, "ExNohost should be 68"
+  test "ExNoinput constant":
+    check ExNoinput == 66
 
-# service unavailable
-assert ExUnavailable == 69, "ExUnavailable should be 69"
+  test "ExNouser constant":
+    check ExNouser == 67
 
-# internal software error
-assert ExSoftware == 70, "ExSoftware should be 70"
+  test "ExNohost constant":
+    check ExNohost == 68
 
-# system error (e.g., can't fork)
-assert ExOserr == 71, "ExOserr should be 71"
+  test "ExUnavailable constant":
+    check ExUnavailable == 69
 
-# critical OS file missing
-assert ExOsfile == 72, "ExOsfile should be 72"
+  test "ExSoftware constant":
+    check ExSoftware == 70
 
-# can't create (user) output file
-assert ExCantcreat == 73, "ExCantcreat should be 73"
+  test "ExOserr constant":
+    check ExOserr == 71
 
-# input/output error
-assert ExIoerr == 74, "ExIoerr should be 74"
+  test "ExOsfile constant":
+    check ExOsfile == 72
 
-# temp failure; user is invited to retry
-assert ExTempfail == 75, "ExTempfail should be 75"
+  test "ExCantcreat constant":
+    check ExCantcreat == 73
 
-# remote error in protocol
-assert ExProtocol == 76, "ExProtocol should be 76"
+  test "ExIoerr constant":
+    check ExIoerr == 74
 
-# permission denied
-assert ExNoperm == 77, "ExNoperm should be 77"
+  test "ExTempfail constant":
+    check ExTempfail == 75
 
-# configuration error
-assert ExConfig == 78, "ExConfig should be 78"
+  test "ExProtocol constant":
+    check ExProtocol == 76
 
-# maximum listed value
-assert ExMax == 78, "ExMax should be 78"
+  test "ExNoperm constant":
+    check ExNoperm == 77
 
-# 定数の一貫性をチェック
-assert ExBase == ExUsage, "ExBase and ExUsage should be equal"
-assert ExMax == ExConfig, "ExMax and ExConfig should be equal"
+  test "ExConfig constant":
+    check ExConfig == 78
 
-echo "All sysexits constants are correctly exported"
+  test "ExMax constant":
+    check ExMax == 78
+
+suite "sysexits consistency":
+
+  test "ExBase and ExUsage should be equal":
+    check ExBase == ExUsage
+
+  test "ExMax and ExConfig should be equal":
+    check ExMax == ExConfig
