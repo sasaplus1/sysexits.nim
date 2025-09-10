@@ -1,11 +1,11 @@
 # Package
 
-version       = "0.1.0"
-author        = "sasa+1"
-description   = "sysexits.h porting for Nim"
-license       = "MIT"
-skipDirs      = @["tests"]
-srcDir        = "src"
+version = "0.1.0"
+author = "sasa+1"
+description = "sysexits.h porting for Nim"
+license = "MIT"
+skipDirs = @["tests"]
+srcDir = "src"
 
 # Dependencies
 

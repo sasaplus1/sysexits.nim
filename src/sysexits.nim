@@ -42,24 +42,24 @@ SUCH DAMAGE.
 ]#
 
 const
-  ExOk*          = 0  ## successful termination
+  ExOk* = 0           ## successful termination
 
-  ExBase*        = 64 ## base value for error messages
+  ExBase* = 64        ## base value for error messages
 
-  ExUsage*       = 64 ## command line usage error
-  ExDataerr*     = 65 ## data format error
-  ExNoinput*     = 66 ## cannot open input
-  ExNouser*      = 67 ## addressee unknown
-  ExNohost*      = 68 ## host name unknown
+  ExUsage* = 64       ## command line usage error
+  ExDataerr* = 65     ## data format error
+  ExNoinput* = 66     ## cannot open input
+  ExNouser* = 67      ## addressee unknown
+  ExNohost* = 68      ## host name unknown
   ExUnavailable* = 69 ## service unavailable
-  ExSoftware*    = 70 ## internal software error
-  ExOserr*       = 71 ## system error (e.g., can't fork)
-  ExOsfile*      = 72 ## critical OS file missing
-  ExCantcreat*   = 73 ## can't create (user) output file
-  ExIoerr*       = 74 ## input/output error
-  ExTempfail*    = 75 ## temp failure; user is invited to retry
-  ExProtocol*    = 76 ## remote error in protocol
-  ExNoperm*      = 77 ## permission denied
-  ExConfig*      = 78 ## configuration error
+  ExSoftware* = 70    ## internal software error
+  ExOserr* = 71       ## system error (e.g., can't fork)
+  ExOsfile* = 72      ## critical OS file missing
+  ExCantcreat* = 73   ## can't create (user) output file
+  ExIoerr* = 74       ## input/output error
+  ExTempfail* = 75    ## temp failure; user is invited to retry
+  ExProtocol* = 76    ## remote error in protocol
+  ExNoperm* = 77      ## permission denied
+  ExConfig* = 78      ## configuration error
 
-  ExMax*         = 78 ## maximum listed value
+  ExMax* = 78         ## maximum listed value
