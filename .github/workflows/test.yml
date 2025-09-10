@@ -30,6 +30,8 @@ jobs:
       - uses: jiro4989/setup-nim-action@3a60cf06f20c1cf3a9becf76b30288c0361d5f1e # v2.2.2
         with:
           nim-version: ${{ matrix.version }}
+          nim-install-directory: nim
+          parent-nim-install-directory: /opt
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - run: nimble install
       - run: ${{ matrix.command }}
