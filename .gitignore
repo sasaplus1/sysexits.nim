@@ -4,3 +4,7 @@
 nimcache/
 nimblecache/
 htmldocs/
+
+### sasaplus1/sysexits.nim
+
+testresults/
