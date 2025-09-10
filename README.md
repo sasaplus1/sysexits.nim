@@ -14,6 +14,14 @@ Or add to your `.nimble` file:
 requires "https://github.com/sasaplus1/sysexits.nim"
 ```
 
+## Usage
+
+```nim
+import sysexits
+
+echo ExOk # => 0
+```
+
 ## License
 
 The MIT license
