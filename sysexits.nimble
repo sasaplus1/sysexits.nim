@@ -13,15 +13,21 @@ requires "nim >= 1.0.0"
 
 # Tasks
 
+import os
+
 task clean, "Remove generated files":
   rmFile "tests/sysexits"
 
 task format, "Format source files":
-  exec r"find . -type f \( -name '*.nim' -or -name '*.nimble' \) -exec nimpretty {} +"
+  for file in walkDirRec("."):
+    if file.endsWith(".nim") or file.endsWith(".nimble"):
+      exec "nimpretty " & file
 
 task lint, "Run style checks":
   ## cannot check nimble file
-  exec r"find . -type f -name '*.nim' -exec nim check --styleCheck:error {} \;"
+  for file in walkDirRec("."):
+    if file.endsWith(".nim"):
+      exec "nim check --styleCheck:error " & file
 
 task test, "Run tests":
   exec "nim c -r tests/sysexits.nim"
